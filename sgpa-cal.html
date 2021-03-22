@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sgpa calculator</title>
+    <link rel="stylesheet" href="sgpa-cal.css" />
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 id="title">Sgpa calculator</h1>
+      </div>
+    </header>
+    <main>
+      <div class="marks-container">
+        <form class="marks-input">
+          <div class="input">
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 1"
+                id="marks-sub-1"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 1"
+                id="credits-sub-1"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-1" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 2"
+                id="marks-sub-2"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 2"
+                id="credits-sub-2"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-2" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 3"
+                id="marks-sub-3"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 3"
+                id="credits-sub-3"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-3" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 4"
+                id="marks-sub-4"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 4"
+                id="credits-sub-4"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-4" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 5"
+                id="marks-sub-5"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 5"
+                id="credits-sub-5"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-5" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 6"
+                id="marks-sub-6"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 6"
+                id="credits-sub-6"
+                class="credits"
+                max="4"
+                
+              />
+              <input type="number" disabled class="grade-point gp-sub-6" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 7"
+                id="marks-sub-7"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 7"
+                id="credits-sub-7"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-7" />
+            </div>
+            <div class="marks-card">
+              <input
+                type="number"
+                placeholder="Marks of sub 8"
+                id="marks-sub-8"
+                class="marks"
+                max="100"
+              />
+              <input
+                type="number"
+                placeholder="credits of sub 8"
+                id="credits-sub-8"
+                class="credits"
+                max="4"
+              />
+              <input type="number" disabled class="grade-point gp-sub-5" />
+            </div>
+            <div class="submit-btn">
+              <input type="submit" id="cal-sgpa" />
+            </div>
+          </div>
+          <div class="results">
+            <div class="crd-reg">
+              <spam>Credits registered :</spam><br />
+              <input type="number" id="regCredits" disabled />
+            </div>
+            <div class="crd-ern">
+              <spam>Credits Earned :</spam><br />
+              <input type="number" id="ernCredits" disabled />
+            </div>
+            <div class="total">
+              <spam>∑(c<sub>i</sub>*g<sub>i</sub>):</spam><br />
+              <input type="number" id="total" disabled />
+            </div>
+            <div class="final-sgpa">
+              <spam>SGPA:</spam><br />
+              <input type="number" id="finalSgpa" disabled />
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script src="sgpa-cal.js"></script>
+</html>

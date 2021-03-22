@@ -1,0 +1,104 @@
+body {
+  background-color: aqua;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 20vh;
+}
+
+body main .marks-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60vh;
+}
+
+body main .marks-container .marks-input .input {
+  margin: 20px;
+}
+
+body main .marks-container .marks-input .input .marks-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+
+body main .marks-container .marks-input .input .marks-card .grade-point {
+  display: inline;
+  background-color: white;
+}
+
+body main .marks-container .marks-input .input .submit-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .marks-container .marks-input .input input {
+  border: 3px solid black;
+  border-radius: 4px;
+}
+
+body main .marks-container .marks-input .input input:invalid {
+  border: 3px solid red;
+  outline: none;
+}
+
+body main .marks-container .marks-input .input #cal-sgpa {
+  border: 1px solid black;
+}
+
+body main .marks-container .marks-input input {
+  font-size: 1rem;
+  margin: 5px;
+}
+
+body main .marks-container .marks-input .results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 2em;
+  background-color: #957efa;
+  border: 2px solid black;
+}
+
+body main .marks-container .marks-input .results spam {
+  font-size: 20px;
+}
+/*# sourceMappingURL=sgpa-cal.css.map */

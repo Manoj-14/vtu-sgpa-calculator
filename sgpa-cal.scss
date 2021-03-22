@@ -1,0 +1,67 @@
+@mixin initial {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: aqua;
+  @include initial;
+  .heading {
+    @include centering;
+    min-height: 20vh;
+  }
+  main {
+    .marks-container {
+      @include centering;
+      min-height: 60vh;
+      .marks-input {
+        .input {
+          //    background-color: white;
+          margin: 20px;
+          .marks-card {
+            @include centering;
+            margin: 5px;
+            .grade-point {
+              display: inline;
+              background-color: white;
+            }
+          }
+          .submit-btn {
+            @include centering;
+          }
+          input{
+            border: 3px solid black;
+            border-radius: 4px;
+          }
+          input:invalid {
+            border: 3px solid red;
+            outline: none;
+          }
+          #cal-sgpa{
+            border: 1px solid black;
+          }
+        }
+        input {
+          font-size: 1rem;
+          margin: 5px;
+        }
+
+        .results {
+          display: flex;
+          flex-direction: row;
+          padding: 2em;
+          background-color: rgb(149, 126, 250);
+          border: 2px solid black;
+          spam {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
