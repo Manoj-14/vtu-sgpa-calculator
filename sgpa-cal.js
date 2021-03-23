@@ -15,7 +15,7 @@ const subCredits3 = document.getElementById("credits-sub-3");
 const subCredits4 = document.getElementById("credits-sub-4");
 const subCredits5 = document.getElementById("credits-sub-5");
 const subCredits6 = document.getElementById("credits-sub-6");
-var sum = 0;
+var totalSum = 0;
 calSgpa.addEventListener("submit", function (e) {
     calculate(subMarks, subCredits);
     e.preventDefault();
@@ -41,13 +41,14 @@ function calculate(validMark, validCredits) {
 }
 // Registered Credits
 function registerCredits() {
-
+    var sum = 0;
     for (let l = 0; l < subCredits.length; l++) {
         const regCred = parseInt(subCredits[l].value);
         sum = sum + regCred;
     }
     // console.log(sum);
     dispRegCredits.value = sum;
+    totalSum = sum;
 }
 
 // Calculating grade point 
@@ -95,6 +96,8 @@ function finalSgpa() {
         points = points + subPoints;
     }
     dispTotal.value = points;
-    sgpa = points / sum;
+    sgpa = points / totalSum;
     dispsgpa.value = sgpa;
+    //registerCredits()
+    //console.log(sum);
 }
