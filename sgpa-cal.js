@@ -35,11 +35,14 @@ function calculate(validMark, validCredits) {
         }
     }
     calGradePoint(subMarks, dispGradePoint);
+    displayGradeSec();
     registerCredits();
     earnedCredits();
     finalSgpa();
+    bgColour.style.display = "flex";
 }
 // Registered Credits
+// console.log(subCredits);
 function registerCredits() {
     var sum = 0;
     for (let l = 0; l < subCredits.length; l++) {
@@ -97,7 +100,12 @@ function finalSgpa() {
     }
     dispTotal.value = points;
     sgpa = points / totalSum;
-    dispsgpa.value = sgpa;
+    dispsgpa.value = sgpa.toFixed(2);
     //registerCredits()
     //console.log(sum);
+}
+function displayGradeSec() {
+    for (let p = 0; p < dispGradePoint.length; p++) {
+        dispGradePoint[p].style.display = "inline";
+    }
 }

@@ -8,15 +8,30 @@
     <link rel="stylesheet" href="sgpa-cal.css" />
   </head>
   <body>
+    <div class="custom-shape-divider-top-1617036178">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+      </svg>
+    </div>
     <header>
       <div class="heading">
-        <h1 id="title">Sgpa calculator</h1>
+        <h1 id="title">SGPA CALCULATOR</h1>
       </div>
     </header>
     <main>
       <div class="marks-container">
         <form class="marks-input">
           <div class="input">
+            <div class="labeling">
+              <div><p>Marks</p></div>
+              <div><p>Credits</p></div>
+              <div display="none"><p>grade point</p></div>
+            </div>
             <div class="marks-card">
               <input
                 type="number"
@@ -158,21 +173,25 @@
             </div>
           </div>
           <div class="results">
-            <div class="crd-reg">
-              <spam>Credits registered :</spam><br />
-              <input type="number" id="regCredits" disabled />
+            <div>
+              <div class="crd-reg">
+                <spam>Credits registered :</spam><br />
+                <input type="number" id="regCredits" disabled />
+              </div>
+              <div class="crd-ern">
+                <spam>Credits Earned :</spam><br />
+                <input type="number" id="ernCredits" disabled />
+              </div>
             </div>
-            <div class="crd-ern">
-              <spam>Credits Earned :</spam><br />
-              <input type="number" id="ernCredits" disabled />
-            </div>
-            <div class="total">
-              <spam>∑(c<sub>i</sub>*g<sub>i</sub>):</spam><br />
-              <input type="number" id="total" disabled />
-            </div>
-            <div class="final-sgpa">
-              <spam>SGPA:</spam><br />
-              <input type="number" id="finalSgpa" disabled />
+            <div>
+              <div class="total">
+                <spam>∑(c<sub>i</sub>*g<sub>i</sub>):</spam><br />
+                <input type="number" id="total" disabled />
+              </div>
+              <div class="final-sgpa">
+                <spam>SGPA:</spam><br />
+                <input type="number" id="finalSgpa" disabled />
+              </div>
             </div>
           </div>
         </form>
