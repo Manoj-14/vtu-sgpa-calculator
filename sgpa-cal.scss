@@ -11,6 +11,9 @@
 body {
   background: linear-gradient(#00b7d4, #505488, #2f3f80, #161569);
   @include initial;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
   .custom-shape-divider-top-1617036178 {
     position: absolute;
     top: 0;
@@ -33,27 +36,16 @@ body {
   }
   .heading {
     @include centering;
-    min-height: 0vh;
+    // min-height: 0vh;
     font-size: larger;
     color: black;
   }
   main {
     .marks-container {
       @include centering;
-      // background: white;
       align-self: center;
-      margin: auto;
-      max-width: 150vh;
-      margin-bottom: 3rem;
-      // min-height: 90vh;
-      padding: 2rem;
-      background: #2f3f80;
-      opacity: 0.7;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
       .marks-input {
         .input {
-          //    background-color: white;
           margin: 20px;
           .labeling {
             // @include centering;
@@ -63,13 +55,12 @@ body {
             // width: 50em;
             align-items: center;
             div {
-              width: 220px;
+              // width: 220px;
               margin: 5px;
               text-align: center;
               p {
-                background-color: white;                
+                background-color: white;
               }
-              
             }
 
             // :last-child{
@@ -79,18 +70,12 @@ body {
           .marks-card {
             @include centering;
             margin: 5px;
-
-            .grade-point {
-              display: none;
-              // background: rgba(255, 255, 255, 0.45);/
-            }
           }
           .submit-btn {
             @include centering;
 
             #cal-sgpa {
               border: 1px solid black;
-              // box-shadow: 2px 3px black;
               outline: none;
               width: 15rem;
               cursor: pointer;
@@ -102,7 +87,7 @@ body {
           }
           input {
             background: white;
-            border: 3px solid rgba(255, 255, 255, 0.45);
+            border: 3px solid transparent;
             border-radius: 4px;
             font-size: 20px;
             text-align: center;
@@ -127,11 +112,11 @@ body {
         }
         .results {
           display: none;
-          flex-direction: row;
-          padding: 2em;
+          flex-wrap: wrap;
+          // padding: 2em;
           // background-color: #9c3d54;
           // border: 2px solid black;
-          margin: 1rem;
+          // margin: 1rem;
           // glassmorphism
           background: rgba(255, 255, 255, 0.45);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -157,6 +142,21 @@ body {
           }
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  .marks-input {
+    .marks-card {
+      input {
+        width: 30vw;
+        &::placeholder{
+          font-size: 1rem;
+        }
+      }  
+    }
+    .results{
+      background-color: green;
     }
   }
 }

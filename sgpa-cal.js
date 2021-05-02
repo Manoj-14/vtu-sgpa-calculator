@@ -8,13 +8,7 @@ const dispRegCredits = document.getElementById("regCredits");
 const dispEarnCredits = document.getElementById("ernCredits");
 const dispTotal = document.getElementById("total");
 const dispsgpa = document.getElementById("finalSgpa");
-// importing credit points
-const subCredits1 = document.getElementById("credits-sub-1");
-const subCredits2 = document.getElementById("credits-sub-2");
-const subCredits3 = document.getElementById("credits-sub-3");
-const subCredits4 = document.getElementById("credits-sub-4");
-const subCredits5 = document.getElementById("credits-sub-5");
-const subCredits6 = document.getElementById("credits-sub-6");
+
 var totalSum = 0;
 calSgpa.addEventListener("submit", function (e) {
     calculate(subMarks, subCredits);
@@ -24,7 +18,7 @@ function calculate(validMark, validCredits) {
     for (let i = 0; i < validMark.length; i++) {
         const checkMark = validMark[i];
         const checkCredits = validCredits[i];
-        // console.log(element.value);
+        
         if (checkMark.value === "" || checkCredits.value === "") {
             alert("Please Enter all the Values");
             return;
@@ -34,52 +28,52 @@ function calculate(validMark, validCredits) {
             return;
         }
     }
-    calGradePoint(subMarks, dispGradePoint);
-    displayGradeSec();
+    
+    gradeSub(subMarks);
+    
     registerCredits();
     earnedCredits();
     finalSgpa();
     bgColour.style.display = "flex";
 }
-// Registered Credits
-// console.log(subCredits);
+
 function registerCredits() {
     var sum = 0;
     for (let l = 0; l < subCredits.length; l++) {
         const regCred = parseInt(subCredits[l].value);
         sum = sum + regCred;
     }
-    // console.log(sum);
+    
     dispRegCredits.value = sum;
     totalSum = sum;
 }
-
-// Calculating grade point 
-function calGradePoint(marks, gradePoint) {
-    for (let k = 0; k < marks.length; k++) {
-        if (marks[k].value >= 90) {
-            gradePoint[k].value = 10;
+subGrade=[];
+function gradeSub(marks){
+    for (let l = 0; l < marks.length; l++) {
+        if (marks[l].value >= 90) {
+            subGrade[l] = 10;
         }
-        else if (marks[k].value < 90 && marks[k].value >= 80) {
-            gradePoint[k].value = 9;
+        else if (marks[l].value < 90 && marks[l].value >= 80) {
+            subGrade[l] = 9;
         }
-        else if (marks[k].value < 80 && marks[k].value >= 70) {
-            gradePoint[k].value = 8;
+        else if (marks[l].value < 80 && marks[l].value >= 70) {
+            subGrade[l] = 8;
         }
-        else if (marks[k].value < 70 && marks[k].value >= 60) {
-            gradePoint[k].value = 7;
+        else if (marks[l].value < 70 && marks[l].value >= 60) {
+            subGrade[l] = 7;
         }
-        else if (marks[k].value < 60 && marks[k].value >= 45) {
-            gradePoint[k].value = 6;
+        else if (marks[l].value < 60 && marks[l].value >= 45) {
+            subGrade[l] = 6;
         }
-        else if (marks[k].value < 45 && marks[k].value >= 40) {
-            gradePoint[k].value = 4;
+        else if (marks[l].value < 45 && marks[l].value >= 40) {
+            subGrade[l] = 4;
         }
         else {
-            gradePoint[k].value = 0;
+            subGrade[l] = 0;
         }
     }
 }
+
 // earned credits
 function earnedCredits() {
     var total = 0;
@@ -95,17 +89,10 @@ function earnedCredits() {
 function finalSgpa() {
     var subPoints = 0, points = 0;
     for (let n = 0; n < subMarks.length; n++) {
-        subPoints = parseInt(dispGradePoint[n].value) * parseInt(subCredits[n].value);
+        subPoints = parseInt(subGrade[n]) * parseInt(subCredits[n].value);
         points = points + subPoints;
     }
     dispTotal.value = points;
     sgpa = points / totalSum;
     dispsgpa.value = sgpa.toFixed(2);
-    //registerCredits()
-    //console.log(sum);
-}
-function displayGradeSec() {
-    for (let p = 0; p < dispGradePoint.length; p++) {
-        dispGradePoint[p].style.display = "inline";
-    }
 }
