@@ -78,7 +78,10 @@ body main .marks-container .marks-input .input .labeling {
 
 body main .marks-container .marks-input .input .labeling h2 {
   text-align: center;
-  font-size: 1.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
 }
 
 body main .marks-container .marks-input .input .marks-card {
@@ -204,6 +207,9 @@ body main .marks-container .marks-input .results .final-sgpa {
   }
   html .heading #title {
     font-size: 2rem;
+  }
+  html .marks-input .labeling h2 {
+    font-size: 1.3rem;
   }
   html .marks-input .marks-card input {
     width: 30vw;
