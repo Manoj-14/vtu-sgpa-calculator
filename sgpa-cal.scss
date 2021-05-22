@@ -50,14 +50,8 @@ body {
           .labeling {
             @include centering;
             h2 {
-              text-align: center;
-<<<<<<< HEAD
-              font-size: 1.5rem;
-=======
-              // font-size: 1.5rem;
               width: max-content;
               margin: auto
->>>>>>> 627755b6a9f5b7dd650d45174dbdffcea53c4038
             }
           }
           .marks-card {
