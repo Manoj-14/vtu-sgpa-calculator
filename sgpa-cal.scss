@@ -11,7 +11,7 @@
 body {
   background: linear-gradient(#00b7d4, #505488, #2f3f80, #161569);
   @include initial;
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 0;
   }
   .custom-shape-divider-top-1617036178 {
@@ -47,25 +47,13 @@ body {
       .marks-input {
         .input {
           margin: 20px;
-          .labeling {
-            // @include centering;
-            margin: 5px;
-            display: flex;
-            flex-direction: row;
-            // width: 50em;
-            align-items: center;
-            div {
-              // width: 220px;
-              margin: 5px;
+          .labeling{
+            @include centering;
+            h2{
               text-align: center;
-              p {
-                background-color: white;
-              }
-            }
+              font-size: 1.5rem;
 
-            // :last-child{
-            //   display: none;
-            // }
+            }
           }
           .marks-card {
             @include centering;
@@ -80,7 +68,7 @@ body {
               width: 15rem;
               cursor: pointer;
               &:active {
-                transform: translate(0px, 3px);
+                transform: translateY(3px);
                 box-shadow: none;
               }
             }
@@ -95,6 +83,9 @@ body {
             opacity: 1;
             &:invalid {
               border: 3px solid red;
+            }
+            &::placeholder {
+              text-transform: capitalize;
             }
           }
         }
@@ -113,11 +104,6 @@ body {
         .results {
           display: none;
           flex-wrap: wrap;
-          // padding: 2em;
-          // background-color: #9c3d54;
-          // border: 2px solid black;
-          // margin: 1rem;
-          // glassmorphism
           background: rgba(255, 255, 255, 0.45);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           backdrop-filter: blur(5px);
@@ -126,7 +112,6 @@ body {
           border: 1px solid rgba(255, 255, 255, 0.18);
           justify-content: center;
           align-items: center;
-          // glassmorphism
           spam {
             font-size: 20px;
             text-align: center;
@@ -146,17 +131,20 @@ body {
   }
 }
 @media screen and (max-width: 960px) {
-  .marks-input {
-    .marks-card {
-      input {
-        width: 30vw;
-        &::placeholder{
-          font-size: 1rem;
-        }
-      }  
+  html {
+    border-radius: 1rem;
+    .heading #title {
+      font-size: 2rem;
     }
-    .results{
-      background-color: green;
+    .marks-input {
+      .marks-card {
+        input {
+          width: 30vw;
+          &::placeholder {
+            font-size: 0.9rem;
+          }
+        }
+      }
     }
   }
 }
