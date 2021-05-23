@@ -4,16 +4,18 @@ const bgColour = document.querySelector(".results");
 const hideDisplay = document.querySelector(".entry");
 btn.addEventListener("submit", function (e) {
   const getInp = document.getElementById("getInp");
-  markCreditsInp(getInp.value);
-  hideDisplay.style.display = "none";
-  getInp.value = "";
-  e.preventDefault();
+
+  if (getInp.value == false) {
+    alert("Enter number of Subjects");
+  } else {
+    markCreditsInp(getInp.value);
+    hideDisplay.style.display = "none";
+    getInp.value = "";
+    e.preventDefault();
+  }
 });
 goBack = () => {
-  apendinp.style.display = "none";
-  bgColour.style.display = "none";
-  body.style.height = "100vh";
-  hideDisplay.style.display = "flex";
+  document.location.reload();
 };
 markCreditsInp = (numSub) => {
   const divOne = document.querySelector(".submit-btn");
