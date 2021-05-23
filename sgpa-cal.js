@@ -7,6 +7,8 @@ btn.addEventListener("submit", function (e) {
 
   if (getInp.value == false) {
     alert("Enter number of Subjects");
+  } else if (getInp.value < 4) {
+    alert("Number of subjects should greater than 3");
   } else {
     markCreditsInp(getInp.value);
     hideDisplay.style.display = "none";
