@@ -1,8 +1,54 @@
-const calbtn = document.getElementById("#cal-sgpa");
+const btn = document.querySelector(".getInputs");
+const apendinp = document.querySelector(".input");
 const bgColour = document.querySelector(".results");
+const hideDisplay = document.querySelector(".entry");
+btn.addEventListener("submit", function (e) {
+  const getInp = document.getElementById("getInp");
+  markCreditsInp(getInp.value);
+  hideDisplay.style.display = "none";
+  getInp.value = "";
+  e.preventDefault();
+});
+goBack = () => {
+  apendinp.style.display = "none";
+  bgColour.style.display = "none";
+  body.style.height = "100vh";
+  hideDisplay.style.display = "flex";
+};
+markCreditsInp = (numSub) => {
+  const divOne = document.querySelector(".submit-btn");
+
+  for (let i = 1; i <= numSub; i++) {
+    const marksDiv = document.createElement("div");
+    marksDiv.setAttribute("class", "marks-card");
+
+    const markinp = document.createElement("input");
+    markinp.setAttribute("type", "number");
+    markinp.setAttribute("placeholder", `Marks of sub ${i}`);
+    markinp.setAttribute("Id", `marks-sub-${i}`);
+    markinp.setAttribute("class", "marks");
+    markinp.setAttribute("max", 100);
+
+    const creditinp = document.createElement("input");
+    creditinp.setAttribute("type", "number");
+    creditinp.setAttribute("placeholder", `Credits of sub ${i}`);
+    creditinp.setAttribute("Id", `credits-sub-${i}`);
+    creditinp.setAttribute("class", "credits");
+    creditinp.setAttribute("max", 4);
+
+    marksDiv.appendChild(markinp);
+    marksDiv.appendChild(creditinp);
+
+    apendinp.insertBefore(marksDiv, divOne);
+  }
+  apendinp.style.display = "block";
+};
+
+const body = document.querySelector("body");
+
+const calbtn = document.getElementById("#cal-sgpa");
+
 const calSgpa = document.querySelector(".marks-input");
-const subMarks = document.querySelectorAll(".marks");
-const subCredits = document.querySelectorAll(".credits");
 const dispGradePoint = document.querySelectorAll(".grade-point");
 const dispRegCredits = document.getElementById("regCredits");
 const dispEarnCredits = document.getElementById("ernCredits");
@@ -10,10 +56,16 @@ const dispTotal = document.getElementById("total");
 const dispsgpa = document.getElementById("finalSgpa");
 
 var totalSum = 0;
+var subjectMarks, subjectCredits;
 calSgpa.addEventListener("submit", function (e) {
-  calculate(subMarks, subCredits);
+  const subMarks = document.querySelectorAll(".marks");
+  subjectMarks = subMarks;
+  const subCredits = document.querySelectorAll(".credits");
+  subjectCredits = subCredits;
+  calculate(subjectMarks, subjectCredits);
   e.preventDefault();
 });
+
 function calculate(validMark, validCredits) {
   for (let i = 0; i < validMark.length; i++) {
     const checkMark = validMark[i];
@@ -28,18 +80,19 @@ function calculate(validMark, validCredits) {
     }
   }
 
-  gradeSub(subMarks);
+  gradeSub(subjectMarks);
 
   registerCredits();
   earnedCredits();
   finalSgpa();
+  body.style.height = "auto";
   bgColour.style.display = "flex";
 }
 
 function registerCredits() {
   var sum = 0;
-  for (let l = 0; l < subCredits.length; l++) {
-    const regCred = parseInt(subCredits[l].value);
+  for (let l = 0; l < subjectCredits.length; l++) {
+    const regCred = parseInt(subjectCredits[l].value);
     sum = sum + regCred;
   }
 
@@ -67,13 +120,12 @@ function gradeSub(marks) {
   }
 }
 
-// earned credits
 function earnedCredits() {
   var total = 0;
-  for (let m = 0; m < subCredits.length; m++) {
-    const regSub = parseInt(subMarks[m].value);
+  for (let m = 0; m < subjectCredits.length; m++) {
+    const regSub = parseInt(subjectMarks[m].value);
     if (regSub >= 40) {
-      const earnCred = parseInt(subCredits[m].value);
+      const earnCred = parseInt(subjectCredits[m].value);
       total = total + earnCred;
     }
   }
@@ -82,8 +134,8 @@ function earnedCredits() {
 function finalSgpa() {
   var subPoints = 0,
     points = 0;
-  for (let n = 0; n < subMarks.length; n++) {
-    subPoints = parseInt(subGrade[n]) * parseInt(subCredits[n].value);
+  for (let n = 0; n < subjectMarks.length; n++) {
+    subPoints = parseInt(subGrade[n]) * parseInt(subjectCredits[n].value);
     points = points + subPoints;
   }
   dispTotal.value = points;

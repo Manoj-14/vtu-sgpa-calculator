@@ -1,6 +1,7 @@
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#00b7d4), color-stop(#505488), color-stop(#2f3f80), to(#161569));
   background: linear-gradient(#00b7d4, #505488, #2f3f80, #161569);
+  height: 100vh;
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -46,6 +47,56 @@ body .heading {
   color: black;
 }
 
+body main .entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  height: 70vh;
+}
+
+body main .entry input {
+  background: white;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  opacity: 1;
+}
+
+body main .entry input:invalid {
+  border: 3px solid red;
+}
+
+body main .entry input::-webkit-input-placeholder {
+  text-transform: capitalize;
+}
+
+body main .entry input:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+body main .entry input::-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+body main .entry input::placeholder {
+  text-transform: capitalize;
+}
+
+body main .entry input[type="number"]::-webkit-inner-spin-button,
+body main .entry input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body main .marks-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,10 +109,12 @@ body main .marks-container {
           align-items: center;
   -ms-flex-item-align: center;
       align-self: center;
+  margin-bottom: 2rem;
 }
 
 body main .marks-container .marks-input .input {
   margin: 20px;
+  display: none;
 }
 
 body main .marks-container .marks-input .input .labeling {
@@ -108,14 +161,17 @@ body main .marks-container .marks-input .input .submit-btn {
           align-items: center;
 }
 
-body main .marks-container .marks-input .input .submit-btn #cal-sgpa {
+body main .marks-container .marks-input .input .submit-btn #cal-sgpa,
+body main .marks-container .marks-input .input .submit-btn #backbtn {
   border: 1px solid black;
   outline: none;
   width: 15rem;
   cursor: pointer;
+  font-weight: bold;
 }
 
-body main .marks-container .marks-input .input .submit-btn #cal-sgpa:active {
+body main .marks-container .marks-input .input .submit-btn #cal-sgpa:active,
+body main .marks-container .marks-input .input .submit-btn #backbtn:active {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
   -webkit-box-shadow: none;
@@ -209,6 +265,11 @@ body main .marks-container .marks-input .results .final-sgpa {
   }
   html .marks-input .labeling h2 {
     font-size: 1.3rem;
+  }
+  html .marks-input #cal-sgpa,
+  html .marks-input #backbtn {
+    max-width: 33vw;
+    font-size: medium;
   }
   html .marks-input .marks-card input {
     width: 30vw;

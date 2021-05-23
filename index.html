@@ -24,143 +24,33 @@
       </div>
     </header>
     <main>
+      <div class="entry">
+        <form autocomplete="off" class="getInputs">
+          <h3>ENTER THE NUMBER OF SUBJECTS:</h3><br>
+          <input
+            id="getInp"
+            placeholder="enter no of subs"
+            max="10"
+            type="number"
+          />
+          <input type="submit" value="ENTER" id="btn" />
+        </form>
+      </div>
       <div class="marks-container">
-        <form class="marks-input">
+        <form autocomplete="off" class="marks-input">
           <div class="input">
             <div class="labeling">
               <h2>MARKS</h2>
               <h2>CREDITS</h2>
             </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 1"
-                id="marks-sub-1"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 1"
-                id="credits-sub-1"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 2"
-                id="marks-sub-2"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 2"
-                id="credits-sub-2"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 3"
-                id="marks-sub-3"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 3"
-                id="credits-sub-3"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 4"
-                id="marks-sub-4"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 4"
-                id="credits-sub-4"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 5"
-                id="marks-sub-5"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 5"
-                id="credits-sub-5"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 6"
-                id="marks-sub-6"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 6"
-                id="credits-sub-6"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 7"
-                id="marks-sub-7"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 7"
-                id="credits-sub-7"
-                class="credits"
-                max="4"
-              />
-            </div>
-            <div class="marks-card">
-              <input
-                type="number"
-                placeholder="Marks of sub 8"
-                id="marks-sub-8"
-                class="marks"
-                max="100"
-              />
-              <input
-                type="number"
-                placeholder="credits of sub 8"
-                id="credits-sub-8"
-                class="credits"
-                max="4"
-              />
-            </div>
             <div class="submit-btn">
-              <input type="submit" id="cal-sgpa" />
+              <input
+                type="button"
+                value="BACK"
+                id="backbtn"
+                onclick="goBack()"
+              />
+              <input type="submit" value="CALCULATE" id="cal-sgpa" />
             </div>
           </div>
           <div class="results">

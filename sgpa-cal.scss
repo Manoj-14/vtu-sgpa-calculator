@@ -8,8 +8,24 @@
   justify-content: center;
   align-items: center;
 }
+@mixin inputStyle {
+  background: white;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  opacity: 1;
+  &:invalid {
+    border: 3px solid red;
+  }
+  &::placeholder {
+    text-transform: capitalize;
+  }
+}
 body {
   background: linear-gradient(#00b7d4, #505488, #2f3f80, #161569);
+  height: 100vh;
   @include initial;
   &::-webkit-scrollbar {
     width: 0;
@@ -41,17 +57,32 @@ body {
     color: black;
   }
   main {
+    .entry {
+      @include centering;
+      display: flex;
+      height: 70vh;
+      input {
+        @include inputStyle;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
     .marks-container {
       @include centering;
       align-self: center;
+      margin-bottom: 2rem;
       .marks-input {
         .input {
           margin: 20px;
+          display: none;
           .labeling {
             @include centering;
             h2 {
               width: max-content;
-              margin: auto
+              margin: auto;
             }
           }
           .marks-card {
@@ -61,11 +92,13 @@ body {
           .submit-btn {
             @include centering;
 
-            #cal-sgpa {
+            #cal-sgpa,
+            #backbtn {
               border: 1px solid black;
               outline: none;
               width: 15rem;
               cursor: pointer;
+              font-weight: bold;
               &:active {
                 transform: translateY(3px);
                 box-shadow: none;
@@ -73,19 +106,7 @@ body {
             }
           }
           input {
-            background: white;
-            border: 3px solid transparent;
-            border-radius: 4px;
-            font-size: 20px;
-            text-align: center;
-            outline: none;
-            opacity: 1;
-            &:invalid {
-              border: 3px solid red;
-            }
-            &::placeholder {
-              text-transform: capitalize;
-            }
+            @include inputStyle;
           }
         }
         input {
@@ -136,10 +157,15 @@ body {
       font-size: 2rem;
     }
     .marks-input {
-      .labeling{
-        h2{
+      .labeling {
+        h2 {
           font-size: 1.3rem;
         }
+      }
+      #cal-sgpa,
+      #backbtn {
+        max-width: 33vw;
+        font-size: medium;
       }
       .marks-card {
         input {
